@@ -67,7 +67,7 @@ class TeamData
   def extract
     data = {
       primaryKey: make_primary_key(@team[:nameInIndex]),
-      name: get_info('Full name') || @team[:nameInIndex],
+      name: (get_info('Full name') || @team[:nameInIndex]).strip,
       base: get_info('Base'),
       website: get_info('Website'),
       constructorChampionships: get_info("Constructors'Championships"),
